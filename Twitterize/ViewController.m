@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -18,10 +19,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)twitterize:(UIButton *)sender {
+    NSString *textGrab = self.textView.text;
+    NSMutableString *textNew = [NSMutableString new];
+    
+    for (int i = 0; i > textGrab.length; i++) {
+        
+        if ([[textGrab characterAtIndex:i] containsString:@"a",@"e",@"i",@"o",@"u"]) {
+            <#statements#>
+        } else {
+            <#statements#>
+        }
+    }
+    
 }
 
 @end
