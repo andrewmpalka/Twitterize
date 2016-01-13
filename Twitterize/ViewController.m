@@ -24,10 +24,12 @@
     NSMutableString *textNew = [NSMutableString new];
     
     for (int i = 0; i > textGrab.length; i++) {
+        textNew = [textGrab characterAtIndex:i];
+        if ([textNew isEqualToString:@"a"] ) {
+            
+        } else if ([textGrab characterAtIndex:i] == @"e")
         
-        if ([[textGrab characterAtIndex:i] containsString:@"a",@"e",@"i",@"o",@"u"]) {
-            <#statements#>
-        } else {
+        {
             <#statements#>
         }
     }
