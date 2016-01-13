@@ -23,6 +23,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2O7-h7-gFB"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="st5-cB-7e5">
                                 <rect key="frame" x="265" y="247" width="71" height="36"/>
@@ -47,6 +50,25 @@
                                     <action selector="twitterize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P8o-to-Mve"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWj-Vm-L2H">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="#Hashtag#"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="149" y="296" width="97" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onHashtagButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wtb-qt-Osi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J39-cp-Nc5">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="137" y="231" width="127" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -58,6 +80,10 @@
                             <constraint firstItem="W4I-xi-9ON" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="x92-ul-9hW"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ZWj-Vm-L2H"/>
+                                <exclude reference="J39-cp-Nc5"/>
+                            </mask>
                             <mask key="constraints">
                                 <exclude reference="Cf8-aK-dOr"/>
                                 <exclude reference="aMP-lG-Dct"/>
@@ -68,6 +94,10 @@
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ZWj-Vm-L2H"/>
+                                <include reference="J39-cp-Nc5"/>
+                            </mask>
                             <mask key="constraints">
                                 <include reference="Cf8-aK-dOr"/>
                                 <include reference="aMP-lG-Dct"/>
@@ -79,6 +109,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="characterCount" destination="J39-cp-Nc5" id="KQa-uS-jJV"/>
                         <outlet property="textView" destination="W4I-xi-9ON" id="AgS-7y-sOx"/>
                     </connections>
                 </viewController>

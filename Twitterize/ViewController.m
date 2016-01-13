@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UILabel *characterCount;
 
 @end
 
@@ -18,6 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSUInteger length;
+    length = [self.textView.text length];
+    
+    self.characterCount.text = [NSString stringWithFormat:@"Character Count %lu", (unsigned long)length];
+}
+- (BOOL)isAcceptableTextLength:(NSUInteger)length {
+    return length <= 140;
+}
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    return [self isAcceptableTextLength:textView.text.length + text.length - range.length];
+}
+- (void)textViewDidChange:(UITextView *)textView
+{
+    NSUInteger length;
+    length = [textView.text length];
+    
+    self.characterCount.text = [NSString stringWithFormat:@"Character Count %lu", (unsigned long)length];
 }
 - (IBAction)twitterize:(UIButton *)sender {
     NSString *textGrab = self.textView.text;
@@ -46,6 +65,10 @@
     
 }
     self.textView.text = textNew;
+    
+}
+- (IBAction)onHashtagButtonTapped:(UIButton *)sender {
+    NSString *textGrab = self.textView.text;
     
 }
 
