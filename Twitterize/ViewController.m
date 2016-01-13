@@ -23,7 +23,7 @@
     NSString *textGrab = self.textView.text;
     NSMutableString *textNew = [NSMutableString new];
     
-    for (int i = 0; i >= textGrab.length -1; i++) {
+    for (int i = 0; i < textGrab.length -1; i++) {
         NSString *character = [NSString stringWithFormat:@"%c",[textGrab characterAtIndex:i]];
         if ([character isEqualToString:@"a"]) {
             continue;
