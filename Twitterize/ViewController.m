@@ -25,19 +25,19 @@
     
     for (int i = 0; i < textGrab.length -1; i++) {
         NSString *character = [NSString stringWithFormat:@"%c",[textGrab characterAtIndex:i]];
-        if ([character isEqualToString:@"a"]) {
+        if ([character.lowercaseString isEqualToString:@"a"]) {
             continue;
         
-        } else if ([character isEqualToString:@"e"]) {
+        } else if ([character.lowercaseString isEqualToString:@"e"]) {
             continue;
         }
-        else if ([character isEqualToString:@"i"]) {
+        else if ([character.lowercaseString isEqualToString:@"i"]) {
             continue;
         }
-        else if ([character isEqualToString:@"o"]) {
+        else if ([character.lowercaseString isEqualToString:@"o"]) {
             continue;
         }
-        else if ([character isEqualToString:@"u"]) {
+        else if ([character.lowercaseString isEqualToString:@"u"]) {
             continue;
         }
         else {
