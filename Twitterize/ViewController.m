@@ -24,16 +24,25 @@
     NSMutableString *textNew = [NSMutableString new];
     
     for (int i = 0; i > textGrab.length; i++) {
-        textNew = [textGrab characterAtIndex:i];
-        if ([textNew isEqualToString:@"a"] ) {
-            
-        } else if ([textGrab characterAtIndex:i] == @"e")
-        
-        {
-            <#statements#>
+        if ([[textNew substringFromIndex:i] isEqualToString:@"a"]) {
+        } else if ([[textNew substringFromIndex:i] isEqualToString:@"e"]) {
+            continue;
         }
-    }
+        else if ([[textNew substringFromIndex:i] isEqualToString:@"i"]) {
+            continue;
+        }
+        else if ([[textNew substringFromIndex:i] isEqualToString:@"o"]) {
+            continue;
+        }
+        else if ([[textNew substringFromIndex:i] isEqualToString:@"u"]) {
+            continue;
+        }
+        else {
+            [textNew stringByAppendingFormat:@"%@", [textGrab substringFromIndex:i]];
+        }
     
+}
+    self.textView.text = textNew;
 }
 
 @end
