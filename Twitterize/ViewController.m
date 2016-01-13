@@ -23,26 +23,30 @@
     NSString *textGrab = self.textView.text;
     NSMutableString *textNew = [NSMutableString new];
     
-    for (int i = 0; i > textGrab.length; i++) {
-        if ([[textNew substringFromIndex:i] isEqualToString:@"a"]) {
-        } else if ([[textNew substringFromIndex:i] isEqualToString:@"e"]) {
+    for (int i = 0; i >= textGrab.length -1; i++) {
+        NSString *character = [NSString stringWithFormat:@"%c",[textGrab characterAtIndex:i]];
+        if ([character isEqualToString:@"a"]) {
+            continue;
+        
+        } else if ([character isEqualToString:@"e"]) {
             continue;
         }
-        else if ([[textNew substringFromIndex:i] isEqualToString:@"i"]) {
+        else if ([character isEqualToString:@"i"]) {
             continue;
         }
-        else if ([[textNew substringFromIndex:i] isEqualToString:@"o"]) {
+        else if ([character isEqualToString:@"o"]) {
             continue;
         }
-        else if ([[textNew substringFromIndex:i] isEqualToString:@"u"]) {
+        else if ([character isEqualToString:@"u"]) {
             continue;
         }
         else {
-            [textNew stringByAppendingFormat:@"%@", [textGrab substringFromIndex:i]];
+            [textNew appendFormat:@"%@", character];
         }
     
 }
     self.textView.text = textNew;
+    
 }
 
 @end
